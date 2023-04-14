@@ -24,7 +24,9 @@ class Handler implements URLHandler {
             return "404 Not Found!";
         }
     }
+
 }
+
 
 class NumberServer {
     public static void main(String[] args) throws IOException {
