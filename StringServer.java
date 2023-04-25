@@ -12,7 +12,7 @@ class ServerHandler implements URLHandler {
             
             return String.format(message);
         }
-            return "404 Not Found!";
+        return "404 Not Found!";
     }
     
 
