@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.net.URI;
 
-class Handlers implements URLHandler {
+class ServerHandler implements URLHandler {
     int num = 0;
 
     public String handleRequest(URI url) {
@@ -23,7 +23,6 @@ class Handlers implements URLHandler {
 
 }
 
-
 class StringServer {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
@@ -33,6 +32,6 @@ class StringServer {
 
         int port = Integer.parseInt(args[0]);
 
-        Server.start(port, new Handlers());
+        Server.start(port, new ServerHandler());
     }
 }
