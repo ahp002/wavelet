@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.net.URI;
 
-class Handler implements URLHandler {
+class Handlers implements URLHandler {
     int num = 0;
 
     public String handleRequest(URI url) {
@@ -14,14 +14,12 @@ class Handler implements URLHandler {
             System.out.println("Path: " + url.getPath());
             if (url.getPath().contains("/add-message")) {
                 String[] parameters = url.getQuery().split("=");
-                if (parameters[0].equals("count")) {
-                    num += Integer.parseInt(parameters[1]);
-                    return String.format("Number increased by %s! It's now %d", parameters[1], num);
+                    return String.format(parameters[1]);
                 }
-            }
-            return "404 Not Found!";
         }
+            return "404 Not Found!";
     }
+    
 
 }
 
@@ -35,6 +33,6 @@ class StringServer {
 
         int port = Integer.parseInt(args[0]);
 
-        Server.start(port, new Handler());
+        Server.start(port, new Handlers());
     }
 }
